@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] public TerrainGenerator terrainGenerator;
     private Animator animator;
     private bool isHopping;
     // Start is called before the first frame update
@@ -36,16 +37,10 @@ public class Player : MonoBehaviour
     private void MovePlayer(Vector3 diff) {
         animator.SetTrigger("hop");
         isHopping = true;
-        transform.position = transform.position + diff;
+        transform.parent.position = transform.parent.position + diff;
+        
+        terrainGenerator.SpawnTerrain(false, transform.position);
     }
-
-    // cube kept dipping below level
-    void LateUpdate() {
-            if (transform.position.y < 1) {
-            transform.position = new Vector3(transform.position.x, 1, transform.position.z);
-        }
-    }
-
     public void finishHop() {
         isHopping = false;
         
