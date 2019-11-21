@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] public TerrainGenerator terrainGenerator;
+    [SerializeField] private Text scoreText;
+    private int score;
     private Animator animator;
     private bool isHopping;
     // Start is called before the first frame update
@@ -12,10 +15,16 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+
+    private void FixedUpdate() {
+        score++;
+    }
+
     // Update is called once per frame
     void Update() {
-    
-       if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
+        
+        scoreText.text = "Score :" + score;
+        if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
            
            float zDiff = 0;
            // make sure we are in a grid space not inbetween
@@ -43,6 +52,5 @@ public class Player : MonoBehaviour
     }
     public void finishHop() {
         isHopping = false;
-        
     }
 }
