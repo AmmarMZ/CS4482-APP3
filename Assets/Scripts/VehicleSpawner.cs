@@ -8,22 +8,20 @@ public class VehicleSpawner : MonoBehaviour
     [SerializeField] private Transform spawnPos;
     [SerializeField] private float minTime;
     [SerializeField] private float maxTime;
+    [SerializeField] private bool isRight;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnVehicle());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     private IEnumerator SpawnVehicle() {
         while(true) {
             yield return new WaitForSeconds(Random.Range(minTime,maxTime));
-            Instantiate(_vehicle, spawnPos.position, Quaternion.identity);
+            GameObject go = Instantiate(_vehicle, spawnPos.position, Quaternion.identity);
+            if (isRight) {
+                go.transform.Rotate(new Vector3(0, 180, 0));
+            }
         }
     }
 }
