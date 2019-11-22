@@ -66,17 +66,14 @@ public class Player : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
-        // string tag = collision.collider.gameObject.tag;
-        // if (tag.Equals("water1") || tag.Equals("water2") && !isOnLog) {
-        //     Debug.Log("Dead by w1 or w2");
-        // }
-        // else if (tag.Equals("log")) {
-        //     isOnLog = true;
-        //     Debug.Log("on log");
-        // }
-        // else {
-        //     isOnLog = false;
-        // }
+        if (collision.collider.GetComponent<Movement>() != null) {
+            if(collision.collider.GetComponent<Movement>().isLog) {
+                 transform.parent.parent = collision.collider.transform;
+            }
+        }
+        else {
+            transform.parent.parent = null;
+        }
 
     }
 }

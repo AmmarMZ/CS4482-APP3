@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed;
-   
+    public bool isLog;
     // Update is called once per frame
     void Update()
     {
