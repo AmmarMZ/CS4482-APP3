@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vehicle : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed;
    
@@ -10,11 +10,5 @@ public class Vehicle : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.back * speed * Time.deltaTime);
-    }
-
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.collider.GetComponent<Player>() != null) {
-            Destroy(collision.gameObject);
-        }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collisions : MonoBehaviour
+public class WaterBehaviour : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,12 @@ public class Collisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+      private void OnTriggerEnter(Collider other)
+    {
+         Debug.Log("entered water!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         
     }
 }

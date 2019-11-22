@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VehicleSpawner : MonoBehaviour
+public class MovingObjectSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _vehicle;
+    [SerializeField] private GameObject spawnObject;
     [SerializeField] private Transform spawnPos;
     [SerializeField] private float minTime;
     [SerializeField] private float maxTime;
@@ -18,7 +18,7 @@ public class VehicleSpawner : MonoBehaviour
     private IEnumerator SpawnVehicle() {
         while(true) {
             yield return new WaitForSeconds(Random.Range(minTime,maxTime));
-            GameObject go = Instantiate(_vehicle, spawnPos.position, Quaternion.identity);
+            GameObject go = Instantiate(spawnObject, spawnPos.position, Quaternion.identity);
             if (isRight) {
                 go.transform.Rotate(new Vector3(0, 180, 0));
             }
