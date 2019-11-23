@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 1999741200746416767}
   - component: {fileID: 3432456222139388950}
   - component: {fileID: 2053613759893647408}
-  - component: {fileID: 5222158396478874546}
+  - component: {fileID: 8213108510688254676}
   m_Layer: 0
   m_Name: Car
   m_TagString: Car
@@ -838,7 +838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59680fde6bf3c574d992dc8e9e8e6669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5222158396478874546
+--- !u!114 &8213108510688254676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d86bee4df83f7a4d80a03b2bf632b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   isLog: 0
 --- !u!1 &2006234585487141633
 GameObject:

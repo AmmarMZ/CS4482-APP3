@@ -93,6 +93,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainGenerator: {fileID: 0}
   scoreText: {fileID: 0}
+  score: 0
+  speed: 2
 --- !u!95 &7754677773482779386
 Animator:
   serializedVersion: 3

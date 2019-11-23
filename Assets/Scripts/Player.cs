@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] public TerrainGenerator terrainGenerator;
     [SerializeField] private Text scoreText;
-    private int score;
+    [HideInInspector]public float score;
     private Animator animator;
     private bool isHopping;
     private bool isOnLog;
@@ -18,18 +18,14 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
-    private void FixedUpdate() {
-        score++;
-    }
-
     // Update is called once per frame
     void Update() {
         if (transform.localPosition.y < -0.2) {
             // super hacky way
             Destroy(transform.gameObject);
         }
-        scoreText.text = "Score :" + maxDist;
+        float temp = maxDist + score;
+        scoreText.text = "Score :" + temp;;
         // forward
         if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
             maxDist = Mathf.Max(maxDist, transform.position.x + 1);
@@ -51,7 +47,7 @@ public class Player : MonoBehaviour
            MovePlayer(new Vector3(0,0,-1));
        }
        // down
-       else if (Input.GetKeyDown(KeyCode.DownArrow) && !isHopping && maxDist - transform.position.x <= 3 ) {
+       else if (Input.GetKeyDown(KeyCode.DownArrow) && !isHopping && maxDist - transform.position.x <= 3) {
             float zDiff = 0;
 
             if (transform.position.z % 1 != 0) {
@@ -66,7 +62,6 @@ public class Player : MonoBehaviour
         animator.SetTrigger("hop");
         isHopping = true;
         transform.parent.position = transform.parent.position + diff;
-        
         terrainGenerator.SpawnTerrain(false, transform.position);
     }
     public void finishHop() {
@@ -74,6 +69,7 @@ public class Player : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision) {
+
         if (collision.collider.GetComponent<Movement>() != null) {
             if(collision.collider.GetComponent<Movement>().isLog) {
                  transform.parent.parent = collision.collider.transform;
