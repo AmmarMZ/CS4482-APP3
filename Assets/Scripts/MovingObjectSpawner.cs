@@ -18,7 +18,7 @@ public class MovingObjectSpawner : MonoBehaviour
     private IEnumerator SpawnVehicle() {
         while(true) {
             yield return new WaitForSeconds(Random.Range(minTime,maxTime));
-            GameObject go = Instantiate(spawnObject, spawnPos.position, Quaternion.identity);
+            GameObject go = Instantiate(spawnObject, spawnPos.position, Quaternion.identity, transform.parent);
             if (isRight) {
                 go.transform.Rotate(new Vector3(0, 180, 0));
             }

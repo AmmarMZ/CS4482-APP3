@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private Animator animator;
     private bool isHopping;
     private bool isOnLog;
+    [HideInInspector] public static float currDist;
+    private float maxDist;
     // Start is called before the first frame update
     void Start() {
         animator = GetComponent<Animator>();
@@ -27,8 +29,10 @@ public class Player : MonoBehaviour
             // super hacky way
             Destroy(transform.gameObject);
         }
-        scoreText.text = "Score :" + score;
+        scoreText.text = "Score :" + maxDist;
+        // forward
         if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
+            maxDist = Mathf.Max(maxDist, transform.position.x + 1);
            float zDiff = 0;
            // make sure we are in a grid space not inbetween
            if (transform.position.z % 1 != 0) {
@@ -36,15 +40,18 @@ public class Player : MonoBehaviour
            }
             MovePlayer(new Vector3(1,0,zDiff));
        }
+       // left
        else if (Input.GetKeyDown(KeyCode.LeftArrow) && !isHopping) {
            
            MovePlayer(new Vector3(0,0,1));
        }
+       // right
         else if (Input.GetKeyDown(KeyCode.RightArrow) && !isHopping) {
            
            MovePlayer(new Vector3(0,0,-1));
        }
-       else if (Input.GetKeyDown(KeyCode.DownArrow) && !isHopping) {
+       // down
+       else if (Input.GetKeyDown(KeyCode.DownArrow) && !isHopping && maxDist - transform.position.x <= 3 ) {
             float zDiff = 0;
 
             if (transform.position.z % 1 != 0) {
@@ -52,6 +59,7 @@ public class Player : MonoBehaviour
            }
            MovePlayer(new Vector3(-1, 0, zDiff));
        }
+       currDist = transform.position.x;
     }
 
     private void MovePlayer(Vector3 diff) {
