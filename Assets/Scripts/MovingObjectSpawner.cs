@@ -8,7 +8,7 @@ public class MovingObjectSpawner : MonoBehaviour
     [SerializeField] private Transform spawnPos;
     [SerializeField] private float minTime;
     [SerializeField] private float maxTime;
-    [SerializeField] private bool isRight;
+    [SerializeField] public bool isRight;
     // Start is called before the first frame update
     void Start()
     {
