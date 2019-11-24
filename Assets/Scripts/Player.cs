@@ -2,31 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] public TerrainGenerator terrainGenerator;
     [SerializeField] private Text scoreText;
     [HideInInspector]public float score;
+    [SerializeField] private GameObject fragmentedCubes;
+    [HideInInspector] public static float currDist;
     private Animator animator;
     private bool isHopping;
     private bool isOnLog;
-    [HideInInspector] public static float currDist;
     private float maxDist = 0;
-    [SerializeField] private GameObject fragmentedCubes;
-    // Start is called before the first frame update
+    public static bool isDead;
+    private float timer = 0.0f;
+
     void Start() {
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update() {
-        if (transform.localPosition.y < -0.2) {
+
+        if (isDead) {
+            timer += Time.deltaTime;
+            if (timer % 60 >= 2) {
+                SceneManager.LoadScene(0);
+            }
+        }
+        
+        if (transform.localPosition.y < -0.21f && !isDead) {
             // super hacky way
             Vector3 spawnPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z - 1);
+            Vector3 spawnPos2 = new Vector3(transform.position.x -1, transform.position.y + 0.5f, transform.position.z -1);
             Instantiate(fragmentedCubes, spawnPos, transform.rotation);
-            Destroy(transform.gameObject);
-        }
+            Instantiate(fragmentedCubes, spawnPos2, transform.rotation);
+            transform.GetComponent<MeshRenderer>().enabled = false;
+            isDead = true;
+        }   
         float temp = maxDist + score;
         scoreText.text = "Score :" + temp;;
         // forward

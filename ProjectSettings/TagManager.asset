@@ -9,6 +9,8 @@ TagManager:
   - water1
   - water2
   - log
+  - start
+  - exit
   layers:
   - Default
   - TransparentFX
