@@ -838,6 +838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59680fde6bf3c574d992dc8e9e8e6669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fragmentedCubes: {fileID: 483187682637623531, guid: 0ad48b37210c05249974439eeec892fd,
+    type: 3}
 --- !u!114 &8213108510688254676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,6 +854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   isLog: 0
+  timer: 0
 --- !u!1 &2006234585487141633
 GameObject:
   m_ObjectHideFlags: 0

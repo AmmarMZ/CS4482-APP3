@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     private bool isHopping;
     private bool isOnLog;
     [HideInInspector] public static float currDist;
-    private float maxDist;
+    private float maxDist = 0;
+    [SerializeField] private GameObject fragmentedCubes;
     // Start is called before the first frame update
     void Start() {
         animator = GetComponent<Animator>();
@@ -22,13 +23,15 @@ public class Player : MonoBehaviour
     void Update() {
         if (transform.localPosition.y < -0.2) {
             // super hacky way
+            Vector3 spawnPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z - 1);
+            Instantiate(fragmentedCubes, spawnPos, transform.rotation);
             Destroy(transform.gameObject);
         }
         float temp = maxDist + score;
         scoreText.text = "Score :" + temp;;
         // forward
         if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
-            maxDist = Mathf.Max(maxDist, transform.position.x + 1);
+            maxDist = Mathf.Max(maxDist, transform.position.x + 2);
            float zDiff = 0;
            // make sure we are in a grid space not inbetween
            if (transform.position.z % 1 != 0) {

@@ -519,11 +519,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0.16014831, y: 0.55581504, z: -0.11012901, w: 0.8082659}
-  m_LocalPosition: {x: -4.19, y: 5.89, z: -4.5}
+  m_LocalPosition: {x: -4.19, y: 4.68, z: -4.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 22.415, y: 69.03001, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
@@ -876,7 +876,7 @@ PrefabInstance:
     - target: {fileID: 7754677773646326702, guid: ba45db9cc3e508747b237c38a5316a3a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7754677773646326702, guid: ba45db9cc3e508747b237c38a5316a3a,
         type: 3}
@@ -958,6 +958,12 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1683462304}
+    - target: {fileID: 7754677773482779387, guid: ba45db9cc3e508747b237c38a5316a3a,
+        type: 3}
+      propertyPath: fragmentedCubes
+      value: 
+      objectReference: {fileID: 483187682637623531, guid: 0ad48b37210c05249974439eeec892fd,
+        type: 3}
     - target: {fileID: 7754677773482779386, guid: ba45db9cc3e508747b237c38a5316a3a,
         type: 3}
       propertyPath: m_ApplyRootMotion
@@ -968,5 +974,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7754677773482779390, guid: ba45db9cc3e508747b237c38a5316a3a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 23fadb861e33e834a8b1021de2e3660d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba45db9cc3e508747b237c38a5316a3a, type: 3}

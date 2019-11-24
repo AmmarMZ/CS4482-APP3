@@ -18,7 +18,6 @@ public class CollectibleSpawner : MonoBehaviour
         if (toSpawn == 2 || toSpawn == 17) {
             int col = Random.Range(0,2);
             GameObject collectible = Instantiate(collectibles[col], spawnPos.position, Quaternion.identity, transform);
-            
             //clock
             if (col == 0) {
                 collectible.transform.Rotate(new Vector3(0,270,0));
