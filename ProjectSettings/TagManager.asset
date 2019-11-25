@@ -11,6 +11,7 @@ TagManager:
   - log
   - start
   - exit
+  - resume
   layers:
   - Default
   - TransparentFX

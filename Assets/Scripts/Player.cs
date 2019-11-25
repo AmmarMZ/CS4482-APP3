@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     private float maxDist = 0;
     public static bool isDead;
     private float timer = 0.0f;
+    public static bool isPaused = false;
 
     void Start() {
         animator = GetComponent<Animator>();
@@ -24,11 +25,23 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused) {
+            SceneManager.UnloadSceneAsync(2);
+            isPaused = false;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.Escape)) {
+            SceneManager.LoadScene(2, LoadSceneMode.Additive);
+            isPaused = true;
+        }
 
         if (isDead) {
             timer += Time.deltaTime;
             if (timer % 60 >= 2) {
                 SceneManager.LoadScene(0);
+                SceneManager.UnloadSceneAsync(1);
+                timer = 0.0f;
+                isDead = false; 
             }
         }
         

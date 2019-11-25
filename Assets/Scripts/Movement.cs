@@ -8,9 +8,13 @@ public class Movement : MonoBehaviour
     public bool isLog;
     public float timer = 0.0f;
 
+
     void Update()
     {
-        if (Collectible.clockActive && !isLog) {
+        if (Player.isPaused) {
+            // don't move
+        }
+        else if (Collectible.clockActive && !isLog) {
             timer += Time.deltaTime;
             transform.Translate(Vector3.back * 1 * Time.deltaTime);
 

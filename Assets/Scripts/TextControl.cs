@@ -13,11 +13,14 @@ public class TextControl : EventTrigger
     public override void OnPointerClick(PointerEventData data) {
         if(GetComponent<Canvas>().tag.Equals("start")) {
             SceneManager.LoadScene(1);
+            Player.isDead = false;
         }
         else if (GetComponent<Canvas>().tag.Equals("exit")) {
             Application.Quit();
         }
+        else if(GetComponent<Canvas>().tag.Equals("resume")) {
+            SceneManager.UnloadSceneAsync(2);   
+            Player.isPaused = false;
+        }
     }
-
-    
 }
