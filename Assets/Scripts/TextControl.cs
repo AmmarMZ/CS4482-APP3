@@ -16,6 +16,7 @@ public class TextControl : EventTrigger
             Player.isDead = false;
         }
         else if (GetComponent<Canvas>().tag.Equals("exit")) {
+            Debug.Log("Exit clicked");
             Application.Quit();
         }
         else if(GetComponent<Canvas>().tag.Equals("resume")) {
