@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public static bool isDead;
     private float timer = 0.0f;
     public static bool isPaused = false;
+    public static string id = "";
 
     void Start() {
         animator = GetComponent<Animator>();
@@ -35,6 +36,9 @@ public class Player : MonoBehaviour
             isPaused = true;
         }
 
+        float displayedScore = maxDist + score;
+        scoreText.text = "Score :" + displayedScore;
+
         if (isDead) {
             timer += Time.deltaTime;
             if (timer % 60 >= 2) {
@@ -42,9 +46,9 @@ public class Player : MonoBehaviour
                 SceneManager.UnloadSceneAsync(1);
                 timer = 0.0f;
                 isDead = false; 
+                LeaderBoard.updateLeaderBoard((int)displayedScore, id);
             }
         }
-        
         if (transform.localPosition.y < -0.21f && !isDead) {
             // super hacky way
             Vector3 spawnPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z - 1);
@@ -53,9 +57,9 @@ public class Player : MonoBehaviour
             Instantiate(fragmentedCubes, spawnPos2, transform.rotation);
             transform.GetComponent<MeshRenderer>().enabled = false;
             isDead = true;
+        
         }   
-        float temp = maxDist + score;
-        scoreText.text = "Score :" + temp;;
+   
         // forward
         if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
             maxDist = Mathf.Max(maxDist, transform.position.x + 2);

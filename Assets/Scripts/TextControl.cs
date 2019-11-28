@@ -7,21 +7,29 @@ using UnityEngine.SceneManagement;
 
 public class TextControl : EventTrigger
 {
-    [SerializeField] private bool isStart;
-    [SerializeField] private bool isExit;
-    
     public override void OnPointerClick(PointerEventData data) {
         if(GetComponent<Canvas>().tag.Equals("start")) {
+            if(Player.id.Length < 3) {
+                return;
+            }
             SceneManager.LoadScene(1);
             Player.isDead = false;
         }
         else if (GetComponent<Canvas>().tag.Equals("exit")) {
-            Debug.Log("Exit clicked");
             Application.Quit();
         }
         else if(GetComponent<Canvas>().tag.Equals("resume")) {
             SceneManager.UnloadSceneAsync(2);   
             Player.isPaused = false;
         }
+        else if(GetComponent<Canvas>().tag.Equals("leaderboard")) {
+            SceneManager.LoadScene(3);
+        }
+        else if(GetComponent<Canvas>().tag.Equals("back")) {
+            SceneManager.UnloadSceneAsync(3);
+            SceneManager.LoadScene(0);
+        }
+        
     }
+    
 }

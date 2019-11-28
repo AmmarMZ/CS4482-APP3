@@ -12,6 +12,8 @@ TagManager:
   - start
   - exit
   - resume
+  - leaderboard
+  - back
   layers:
   - Default
   - TransparentFX
