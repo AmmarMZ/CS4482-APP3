@@ -8,7 +8,11 @@ using UnityEngine.SceneManagement;
 public class TextControl : EventTrigger
 {
     public override void OnPointerClick(PointerEventData data) {
-        if(GetComponent<Canvas>().tag.Equals("start")) {
+
+        if(GetComponent<Canvas>().tag.Equals("leaderboard")) {
+            SceneManager.LoadScene(3);
+        }
+        else if(GetComponent<Canvas>().tag.Equals("start")) {
             if(Player.id.Length < 3) {
                 return;
             }
@@ -22,9 +26,7 @@ public class TextControl : EventTrigger
             SceneManager.UnloadSceneAsync(2);   
             Player.isPaused = false;
         }
-        else if(GetComponent<Canvas>().tag.Equals("leaderboard")) {
-            SceneManager.LoadScene(3);
-        }
+       
         else if(GetComponent<Canvas>().tag.Equals("stats")) {
             SceneManager.LoadScene(4);
         }
