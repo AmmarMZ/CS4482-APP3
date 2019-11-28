@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private float timer = 0.0f;
     public static bool isPaused = false;
     public static string id = "";
+    public static bool onTurtle;
 
     void Start() {
         animator = GetComponent<Animator>();
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
         }   
    
         // forward
-        if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping) {
+        if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping && !isDead) {
             maxDist = Mathf.Max(maxDist, transform.position.x + 2);
            float zDiff = 0;
            // make sure we are in a grid space not inbetween
@@ -71,17 +72,17 @@ public class Player : MonoBehaviour
             MovePlayer(new Vector3(1,0,zDiff));
        }
        // left
-       else if (Input.GetKeyDown(KeyCode.LeftArrow) && !isHopping) {
+       else if (Input.GetKeyDown(KeyCode.LeftArrow) && !isHopping && !isDead) {
            
            MovePlayer(new Vector3(0,0,1));
        }
        // right
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && !isHopping) {
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && !isHopping && !isDead) {
            
            MovePlayer(new Vector3(0,0,-1));
        }
        // down
-       else if (Input.GetKeyDown(KeyCode.DownArrow) && !isHopping && maxDist - transform.position.x <= 3) {
+       else if (Input.GetKeyDown(KeyCode.DownArrow) && !isHopping && maxDist - transform.position.x <= 3 && !isDead) {
             float zDiff = 0;
 
             if (transform.position.z % 1 != 0) {
@@ -106,11 +107,18 @@ public class Player : MonoBehaviour
 
         if (collision.collider.GetComponent<Movement>() != null) {
             if(collision.collider.GetComponent<Movement>().isLog) {
-                 transform.parent.parent = collision.collider.transform;
+                transform.parent.parent = collision.collider.transform;
+                onTurtle = false;
+
             }
+            if(collision.collider.GetComponent<Movement>().isTurtle) {
+                 transform.parent.parent = collision.collider.transform;
+                 onTurtle = true;
+            } 
         }
         else {
             transform.parent.parent = null;
+            onTurtle = false;
         }
 
     }

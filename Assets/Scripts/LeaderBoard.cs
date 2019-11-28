@@ -24,6 +24,7 @@ public class LeaderBoard : MonoBehaviour
 
         int i = 0;
         string [] lines = File.ReadAllLines(path + scores);  
+        
         foreach (string line in lines) {
             scoreArray[i++] = line;
         }       
@@ -64,7 +65,7 @@ public class LeaderBoard : MonoBehaviour
     public static void updateLeaderBoard(int score, String id)
     {
         string [] lines = File.ReadAllLines(path + scores);  
-        string [] trueOutput = new string [3] {"","",""};
+        string [] trueOutput = new string [3] {"","","",};
         PlayerObj [] po = new PlayerObj[4];
 
 
@@ -81,7 +82,7 @@ public class LeaderBoard : MonoBehaviour
         po[3] = new PlayerObj(id,score);
         Array.Sort(po, PlayerObj.sortScoreDescending());    
 
-         for (int i = 0; i < 3; i++) {
+         for (int i = 0; i < trueOutput.Length; i++) {
             if (po[i] != null) {
                 trueOutput[i] = po[i].id.ToUpper() +": " + po[i].score;
             }

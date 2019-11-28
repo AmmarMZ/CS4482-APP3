@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d86bee4df83f7a4d80a03b2bf632b57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
   isLog: 1
+  isTurtle: 0
 --- !u!1 &3278237877968970286
 GameObject:
   m_ObjectHideFlags: 0

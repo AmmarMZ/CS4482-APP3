@@ -6,7 +6,8 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] public float speed;
     public bool isLog;
-    public float timer = 0.0f;
+    public bool isTurtle;
+    private float timer = 0.0f;
 
 
     void Update()

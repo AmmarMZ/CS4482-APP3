@@ -26,10 +26,6 @@ public class PlayerObj : IComparer {
             if (two == null) {
                 return -1;
             }
-            Debug.Log(one.score);
-            Debug.Log(two.score);
-
-
             return two.score - one.score;
         }
 

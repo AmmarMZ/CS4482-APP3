@@ -135,9 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ffb0fc70f160a49a3d0db8a21b6a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObject: {fileID: 3185801164826224272, guid: 3779ce18c69061c42bf1715cffa0cae5,
-    type: 3}
+  spawnObject:
+  - {fileID: 3185801164826224272, guid: 3779ce18c69061c42bf1715cffa0cae5, type: 3}
+  - {fileID: 1319376820883696603, guid: a85a58e1dec49994cb52ca35d39e79e2, type: 3}
   spawnPos: {fileID: 1371307952436686929}
   minTime: 1
   maxTime: 10
   isRight: 0
+  isRoad: 0
+  isWater: 1
