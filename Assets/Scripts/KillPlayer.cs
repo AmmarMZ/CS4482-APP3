@@ -17,6 +17,7 @@ public class KillPlayer : MonoBehaviour
             Instantiate(fragmentedCubes, spawnPos, transform.rotation);
             Instantiate(fragmentedCubes, spawnPos2, transform.rotation);
             collision.collider.GetComponent<MeshRenderer>().enabled = false;
+            Player.deathByCar++;
             Player.isDead = true;
         }
     }

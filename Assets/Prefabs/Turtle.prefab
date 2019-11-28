@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  isLog: 0
+  isLog: 1
   isTurtle: 1
 --- !u!114 &6944659816867281240
 MonoBehaviour:

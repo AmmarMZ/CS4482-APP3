@@ -23,7 +23,6 @@ public class MovingObjectSpawner : MonoBehaviour
             int idx = 0;
             if(isWater) {
                 int toSpawn = Random.Range(1, 20);
-                
                 // 2, 17 will spawn a collectible, i.e 10% chance of spawning
                 if (toSpawn == 2 || toSpawn == 17) {
                     idx = 1;

@@ -25,8 +25,15 @@ public class TextControl : EventTrigger
         else if(GetComponent<Canvas>().tag.Equals("leaderboard")) {
             SceneManager.LoadScene(3);
         }
+        else if(GetComponent<Canvas>().tag.Equals("stats")) {
+            SceneManager.LoadScene(4);
+        }
         else if(GetComponent<Canvas>().tag.Equals("back")) {
             SceneManager.UnloadSceneAsync(3);
+            SceneManager.LoadScene(0);
+        }
+        else if(GetComponent<Canvas>().tag.Equals("backStats")) {
+            SceneManager.UnloadSceneAsync(4);
             SceneManager.LoadScene(0);
         }
         

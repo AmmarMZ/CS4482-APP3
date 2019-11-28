@@ -21,12 +21,32 @@ public class Player : MonoBehaviour
     public static string id = "";
     public static bool onTurtle;
 
+    public static int coinsCollected = 0;
+    public static int clocksCollected = 0;
+    public static int deathByEnviro = 0;
+    public static int deathByCar = 0;
+    public static int logsRidden = 0;
+    public static int turtlesRidden = 0;
+
+    private float inGameTimer = 0.0f;
+
     void Start() {
+        coinsCollected = 0;
+        clocksCollected = 0;
+        deathByEnviro = 0;
+        deathByCar = 0;
+        logsRidden = 0;
+        turtlesRidden = 0;
+
         animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update() {
+
+        inGameTimer += Time.deltaTime;
+
+
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused) {
             SceneManager.UnloadSceneAsync(2);
             isPaused = false;
@@ -48,6 +68,7 @@ public class Player : MonoBehaviour
                 timer = 0.0f;
                 isDead = false; 
                 LeaderBoard.updateLeaderBoard((int)displayedScore, id);
+                LifeTimeStats.upateLifeTimeStats((int)displayedScore, coinsCollected, clocksCollected, (int)maxDist, deathByEnviro, deathByCar, logsRidden, turtlesRidden, inGameTimer);
             }
         }
         if (transform.localPosition.y < -0.21f && !isDead) {
@@ -57,6 +78,7 @@ public class Player : MonoBehaviour
             Instantiate(fragmentedCubes, spawnPos, transform.rotation);
             Instantiate(fragmentedCubes, spawnPos2, transform.rotation);
             transform.GetComponent<MeshRenderer>().enabled = false;
+            deathByEnviro++;
             isDead = true;
         
         }   
@@ -109,11 +131,12 @@ public class Player : MonoBehaviour
             if(collision.collider.GetComponent<Movement>().isLog) {
                 transform.parent.parent = collision.collider.transform;
                 onTurtle = false;
-
+                logsRidden++;
             }
             if(collision.collider.GetComponent<Movement>().isTurtle) {
                  transform.parent.parent = collision.collider.transform;
                  onTurtle = true;
+                 turtlesRidden++;
             } 
         }
         else {

@@ -12,10 +12,12 @@ public class Collectible : MonoBehaviour
     private void OnCollisionEnter(Collision collision) {
         if (collision.collider.GetComponent<Player>() != null) {
             if (isClock) {
+                Player.clocksCollected++;
                 clockActive = true;
             }
             if (isCoin) {
                 collision.collider.GetComponent<Player>().score += 10;
+                Player.coinsCollected++;
             }
             Destroy(transform.gameObject);
         }

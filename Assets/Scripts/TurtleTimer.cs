@@ -11,10 +11,10 @@ public class TurtleTimer : MonoBehaviour {
     void Update() {
 
         if (transform.Find("Player") != null && !Player.isDead) {
-            Debug.Log(timer % 60);
             timer += Time.deltaTime;
             if(timer % 60 >= maxTime) {
                 Player.isDead = true;
+                Player.deathByEnviro++;
 
                 Vector3 spawnPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z - 1);
                 Vector3 spawnPos2 = new Vector3(transform.position.x -1, transform.position.y + 0.5f, transform.position.z -1);

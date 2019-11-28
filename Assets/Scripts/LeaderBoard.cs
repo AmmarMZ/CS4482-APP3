@@ -14,6 +14,7 @@ public class LeaderBoard : MonoBehaviour
     public bool isSecond;
     public bool isThird;
     public static string[] scoreArray;
+    
     void Start()
     {
         initialize();
@@ -32,18 +33,16 @@ public class LeaderBoard : MonoBehaviour
 
     public static void initialize() {
 
-        if (!Directory.Exists(path))
-        {
-            Debug.Log("doesn't exist");
-            DirectoryInfo di = Directory.CreateDirectory(path);
-            using (StreamWriter sw = File.CreateText(path + scores))
-            {
-                sw.Close();
+        if(!File.Exists(path + scores)) {
+            if (!Directory.Exists(path)) {
+                DirectoryInfo di = Directory.CreateDirectory(path);
             }
+            using (StreamWriter sw = File.CreateText(path + scores)) {
+                sw.Close();
+            }  
         }
+        
     }
-    
-    
 
     // Update is called once per frame
     void Update()
@@ -64,6 +63,7 @@ public class LeaderBoard : MonoBehaviour
 
     public static void updateLeaderBoard(int score, String id)
     {
+        initialize();
         string [] lines = File.ReadAllLines(path + scores);  
         string [] trueOutput = new string [3] {"","","",};
         PlayerObj [] po = new PlayerObj[4];
