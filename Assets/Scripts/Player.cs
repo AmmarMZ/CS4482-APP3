@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public static int turtlesRidden = 0;
 
     private float inGameTimer = 0.0f;
-    public static bool isSpeedMode = false;
+    public static bool isSpeedMode;
 
     void Start() {
         coinsCollected = 0;
@@ -64,12 +64,12 @@ public class Player : MonoBehaviour
         if (isDead) {
             timer += Time.deltaTime;
             if (timer % 60 >= 2) {
-                SceneManager.LoadScene(0);
-                SceneManager.UnloadSceneAsync(1);
                 timer = 0.0f;
                 isDead = false; 
-                LeaderBoard.updateLeaderBoard((int)displayedScore, id);
+                LeaderBoard.updateLeaderBoard((int)displayedScore, id, isSpeedMode);
                 LifeTimeStats.upateLifeTimeStats((int)displayedScore, coinsCollected, clocksCollected, (int)maxDist, deathByEnviro, deathByCar, logsRidden, turtlesRidden, inGameTimer);
+                id = "";
+                SceneManager.LoadScene(0);
             }
         }
         if (transform.localPosition.y < -0.21f && !isDead) {
@@ -81,13 +81,13 @@ public class Player : MonoBehaviour
             transform.GetComponent<MeshRenderer>().enabled = false;
             deathByEnviro++;
             isDead = true;
-        
         }   
    
         // forward
         if(Input.GetKeyDown(KeyCode.UpArrow) && !isHopping && !isDead) {
+
             maxDist = Mathf.Max(maxDist, transform.position.x + 2);
-           float zDiff = 0;
+            float zDiff = 0;
            // make sure we are in a grid space not inbetween
            if (transform.position.z % 1 != 0) {
                zDiff =  Mathf.Round(transform.position.z) - transform.position.z;

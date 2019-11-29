@@ -16,6 +16,7 @@ public class TextControl : EventTrigger
             if(Player.id.Length < 3) {
                 return;
             }
+            Player.isSpeedMode = false;
             SceneManager.LoadScene(1);
             Player.isDead = false;
         }

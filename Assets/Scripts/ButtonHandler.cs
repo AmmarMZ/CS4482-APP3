@@ -16,7 +16,13 @@ public class ButtonHandler : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     public void speedMode() {
-        Player.isSpeedMode = true;
         SceneManager.LoadScene(1);
+        Player.isSpeedMode = true;
+        Player.isDead = false;
+    }
+    public void regulareMode() {
+        SceneManager.LoadScene(1);
+        Player.isSpeedMode = false;
+        Player.isDead = false;
     }
 }

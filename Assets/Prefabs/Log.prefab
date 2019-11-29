@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  fragmentedCubes: {fileID: 483187682637623531, guid: 0ad48b37210c05249974439eeec892fd,
+    type: 3}
   isLog: 1
   isTurtle: 0
 --- !u!1 &3278237877968970286

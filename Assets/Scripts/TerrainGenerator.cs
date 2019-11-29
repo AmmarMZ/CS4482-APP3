@@ -8,17 +8,19 @@ public class TerrainGenerator : MonoBehaviour
     [SerializeField] private int maxTerrainCount;
     [SerializeField] private List<TerrainData> terrainDatas = new List<TerrainData>();
     [SerializeField] private Transform terrainHolder;
-    private List<GameObject> currentTerrains = new List<GameObject>();
+    private List<GameObject> currentTerrains;
     [HideInInspector] public Vector3 currentPosition = new Vector3(0, 0, 0);
     
     private GameObject fallingObj1;
     private GameObject fallingObj2;
     private GameObject fallingObj3;
 
-    public static float falilingXPosition;
+    public static float fallingXPosition;
 
 
     private void Start () {
+        fallingXPosition = 0;
+        currentTerrains = new List<GameObject>();
         currentPosition = new Vector3(0, 0, 0);
         for (int i = 0; i < maxTerrainCount; i++) {
             SpawnTerrain(true, new Vector3(0,0,0), Player.isSpeedMode);
@@ -27,7 +29,7 @@ public class TerrainGenerator : MonoBehaviour
     }
 
     public void SpawnTerrain(bool isStart, Vector3 playerPos, bool isSpeedMode) {
-
+        
         if (currentPosition.x - playerPos.x < minDistanceFromPlayer || isStart) {
 
             int whichTerrain = Random.Range(0, terrainDatas.Count);
@@ -38,7 +40,7 @@ public class TerrainGenerator : MonoBehaviour
                 currentTerrains.Add(terrain);
                 
                 if (!isStart) {
-                    if (isSpeedMode) {
+                    if (isSpeedMode && playerPos.x > 10) {
                         fallingTerrain();
                     }
                     else if (currentTerrains.Count > maxTerrainCount) {
@@ -60,7 +62,7 @@ public class TerrainGenerator : MonoBehaviour
     void Update() {
 
         if(fallingObj1 != null && !Player.isPaused) {
-            falilingXPosition = fallingObj1.transform.position.x;
+                fallingXPosition = fallingObj1.transform.position.x;
                 fallingObj1.transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 1.0f);
                   if(fallingObj1.transform.position.y <= -2) {
                     Destroy(fallingObj1);

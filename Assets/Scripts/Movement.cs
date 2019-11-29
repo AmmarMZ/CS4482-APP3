@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] public float speed;
+    [SerializeField] private GameObject fragmentedCubes;
+
     public bool isLog;
     public bool isTurtle;
     private float timer = 0.0f;
@@ -36,6 +38,20 @@ public class Movement : MonoBehaviour
         // destroy obstacle once player moves far
         if (Player.currDist - transform.position.x > 5) {
             Destroy(transform.gameObject);
+        }
+        if(TerrainGenerator.fallingXPosition >= transform.position.x && transform.position.x > 0) {
+            if (transform.Find("Player")) {
+                Vector3 spawnPos = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z - 1);
+                Vector3 spawnPos2 = new Vector3(transform.position.x -1, transform.position.y + 0.5f, transform.position.z -1);
+                Instantiate(fragmentedCubes, spawnPos, transform.rotation);
+                Instantiate(fragmentedCubes, spawnPos2, transform.rotation);
+                transform.GetComponent<MeshRenderer>().enabled = false;
+                Player.deathByEnviro++;
+                Player.isDead = true;
+            }
+            else {
+                Destroy(transform.gameObject);
+            }
         }
     }
 }
