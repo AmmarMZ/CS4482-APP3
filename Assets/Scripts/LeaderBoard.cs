@@ -10,10 +10,15 @@ public class LeaderBoard : MonoBehaviour
     // Start is called before the first frame update
     public static string path = @"C:\amirza28\";
     public static string scores = "scores.txt";
+    public static string scoresSpeed = "speedScores.txt";
     public bool isFirst;
     public bool isSecond;
     public bool isThird;
-    public static string[] scoreArray;
+    public bool isFirstSpeed;
+    public bool isSecondSpeed;
+    public bool isThirdSpeed;
+    public static string [] scoreArray;
+    public static string [] speedScoreArray;
     
     void Start()
     {

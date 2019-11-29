@@ -15,4 +15,8 @@ public class ButtonHandler : MonoBehaviour
     public void goBack() {
         SceneManager.LoadScene(0);
     }
+    public void speedMode() {
+        Player.isSpeedMode = true;
+        SceneManager.LoadScene(1);
+    }
 }

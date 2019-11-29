@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
     public static int turtlesRidden = 0;
 
     private float inGameTimer = 0.0f;
+    public static bool isSpeedMode = false;
 
     void Start() {
         coinsCollected = 0;
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour
         animator.SetTrigger("hop");
         isHopping = true;
         transform.parent.position = transform.parent.position + diff;
-        terrainGenerator.SpawnTerrain(false, transform.position);
+        terrainGenerator.SpawnTerrain(false, transform.position, isSpeedMode);
     }
     public void finishHop() {
         isHopping = false;
