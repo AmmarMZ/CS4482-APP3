@@ -98,21 +98,25 @@ public class ToggleHandler : MonoBehaviour {
                toggleGreen(false);
                toggleBlue(false);
                toggleYellow(false);
+               currentlySelected = "red";
            }
            else if(name.Equals("blue")) {
                toggleRed(false);
                toggleGreen(false);
                toggleYellow(false);
+               currentlySelected = "blue";
            }
            else if (name.Equals("green")) {
                toggleRed(false);
                toggleBlue(false);
                toggleYellow(false);
+               currentlySelected = "green";
            }
            else if (name.Equals("yellow")) {
                toggleRed(false);
                toggleBlue(false);
                toggleGreen(false);
+               currentlySelected = "yellow";
            }
         }
         else if (!val) {
