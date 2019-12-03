@@ -91,11 +91,6 @@ public class ToggleHandler : MonoBehaviour {
         isStart = false;
         }
     }
-
-    void Update() {
-        
-    }
-
     public void toggle(bool val, String name) {
         
         if(val && !isStart) {
