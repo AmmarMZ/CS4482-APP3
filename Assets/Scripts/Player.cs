@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
                 isDead = false; 
                 LeaderBoard.updateLeaderBoard((int)displayedScore, id, isSpeedMode);
                 LifeTimeStats.upateLifeTimeStats((int)displayedScore, coinsCollected, clocksCollected, (int)maxDist, deathByEnviro, deathByCar, logsRidden, turtlesRidden, inGameTimer);
+                SkinStore.updateBankAccount((int)coinsCollected, false, 0, 0);
                 id = "";
                 SceneManager.LoadScene(0);
             }

@@ -25,4 +25,8 @@ public class ButtonHandler : MonoBehaviour
         Player.isSpeedMode = false;
         Player.isDead = false;
     }
+
+    public void loadStore() {
+        SceneManager.LoadScene(5);
+    }
 }
