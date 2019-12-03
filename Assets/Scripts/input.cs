@@ -9,6 +9,9 @@ public class input : MonoBehaviour
     void Start()
     {
         mainInputField = GetComponent<InputField>();
+        if (Player.id.Length == 3) {
+            mainInputField.gameObject.SetActive(false);
+        }
         mainInputField.onValueChanged.AddListener(delegate {OnvalueChange(); });
     }
 

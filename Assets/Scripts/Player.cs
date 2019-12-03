@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public static bool isSpeedMode;
 
     void Start() {
+        
         coinsCollected = 0;
         clocksCollected = 0;
         deathByEnviro = 0;
@@ -40,6 +41,47 @@ public class Player : MonoBehaviour
         turtlesRidden = 0;
 
         animator = GetComponent<Animator>();
+        if (ToggleHandler.currentlySelected.Equals("red")) {
+            GetComponent<MeshRenderer>().material.color = Color.red;
+
+            for (int i = 0; i < fragmentedCubes.transform.childCount; i++) {
+                if(fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>() != null) {
+                    fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.color = Color.red;
+                }
+            }
+        }
+        else if (ToggleHandler.currentlySelected.Equals("blue")) {
+            GetComponent<MeshRenderer>().material.color = Color.blue;     
+            for (int i = 0; i < fragmentedCubes.transform.childCount; i++) {
+                if(fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>() != null) {
+                    fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.color = Color.blue;
+                }
+            } 
+        }
+        else if (ToggleHandler.currentlySelected.Equals("green")) {
+            GetComponent<MeshRenderer>().material.color = Color.green;
+            for (int i = 0; i < fragmentedCubes.transform.childCount; i++) {
+                if(fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>() != null) {
+                    fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.color = Color.green;
+                }
+            }
+        }
+        else if (ToggleHandler.currentlySelected.Equals("yellow")) {
+            GetComponent<MeshRenderer>().material.color = Color.yellow;  
+            for (int i = 0; i < fragmentedCubes.transform.childCount; i++) {
+                if(fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>() != null) {
+                    fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.color = Color.yellow;
+                }
+            }    
+        }
+        else {
+            GetComponent<MeshRenderer>().material.color = Color.white;  
+            for (int i = 0; i < fragmentedCubes.transform.childCount; i++) {
+                if(fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>() != null) {
+                    fragmentedCubes.transform.GetChild(i).GetComponent<MeshRenderer>().sharedMaterial.color = Color.white;
+                }
+            }    
+        }
     }
 
     // Update is called once per frame
@@ -145,6 +187,10 @@ public class Player : MonoBehaviour
             transform.parent.parent = null;
             onTurtle = false;
         }
+
+    }
+
+    public void getCurrentSkin() {
 
     }
 }

@@ -345,10 +345,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 158857142}
-  - {fileID: 2075834844}
-  - {fileID: 1969603715}
-  - {fileID: 1586777162}
-  - {fileID: 1859969050}
+  - {fileID: 461693319}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -506,7 +503,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yellow
+  m_Text: Yellow Skin
 --- !u!222 &240808145
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -589,6 +586,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254009347}
   m_CullTransparentMesh: 0
+--- !u!1 &461693318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 461693319}
+  - component: {fileID: 461693320}
+  m_Layer: 0
+  m_Name: Toggle Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &461693319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461693318}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.9317597, y: 12.888715, z: 2.278633}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children:
+  - {fileID: 2075834844}
+  - {fileID: 1969603715}
+  - {fileID: 1586777162}
+  - {fileID: 1859969050}
+  m_Father: {fileID: 167123009}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &461693320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461693318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e620a09fa57e7146a294d769d509267, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redToggle: {fileID: 2075834845}
+  blueToggle: {fileID: 1969603716}
+  greenToggle: {fileID: 1586777163}
+  yellowToggle: {fileID: 1859969051}
 --- !u!1 &521133896
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +850,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy Blue Price 20
+  m_Text: Buy Blue - Price 20
 --- !u!222 &684368278
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1418,7 +1466,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Green
+  m_Text: Green Skin
 --- !u!222 &1025219490
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1650,7 +1698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy Red Price 10
+  m_Text: Buy Red - Price 10
 --- !u!222 &1317563778
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1729,7 +1777,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy Yellow Price 80
+  m_Text: Buy Yellow - Price 80
 --- !u!222 &1364403776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1913,7 +1961,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buy Green Price 40
+  m_Text: Buy Green - Price 40
 --- !u!222 &1527259108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1959,7 +2007,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: 14.4}
+  m_AnchoredPosition: {x: -23, y: 14.8}
   m_SizeDelta: {x: 150.4, y: 42.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1549766420
@@ -2079,6 +2127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1586777162}
   - component: {fileID: 1586777163}
+  - component: {fileID: 1586777164}
   m_Layer: 5
   m_Name: Green
   m_TagString: Untagged
@@ -2093,18 +2142,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586777161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -22.786331}
+  m_LocalScale: {x: 4.5, y: 4.5, z: 0}
   m_Children:
   - {fileID: 2013480612}
   - {fileID: 1025219488}
-  m_Father: {fileID: 167123009}
-  m_RootOrder: 3
+  m_Father: {fileID: 461693319}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.1, y: -6.2}
+  m_AnchoredPosition: {x: -58.682415, y: -190.88713}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1586777163
@@ -2149,10 +2198,33 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1586777164}
+        m_MethodName: toggleGreen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &1586777164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1586777161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72db36bf23c41042933ed7e84a742ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1588928609
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,6 +2533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1859969050}
   - component: {fileID: 1859969051}
+  - component: {fileID: 1859969052}
   m_Layer: 5
   m_Name: Yellow
   m_TagString: Untagged
@@ -2475,18 +2548,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859969049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -22.786331}
+  m_LocalScale: {x: 4, y: 4, z: 0}
   m_Children:
   - {fileID: 786097496}
   - {fileID: 240808143}
-  m_Father: {fileID: 167123009}
-  m_RootOrder: 4
+  m_Father: {fileID: 461693319}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 43, y: -5.7}
+  m_AnchoredPosition: {x: 411.3176, y: -185.88713}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859969051
@@ -2531,10 +2604,33 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1859969052}
+        m_MethodName: toggleYellow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &1859969052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859969049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72db36bf23c41042933ed7e84a742ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1894790767
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,6 +2869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1969603715}
   - component: {fileID: 1969603716}
+  - component: {fileID: 1969603717}
   m_Layer: 5
   m_Name: Blue
   m_TagString: Untagged
@@ -2787,18 +2884,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1969603714}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -22.786331}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_Children:
   - {fileID: 1588928610}
   - {fileID: 173553078}
-  m_Father: {fileID: 167123009}
-  m_RootOrder: 2
+  m_Father: {fileID: 461693319}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.1, y: 14.5}
+  m_AnchoredPosition: {x: 500.3176, y: 16.112854}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1969603716
@@ -2843,10 +2940,33 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1969603717}
+        m_MethodName: toggleBlue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &1969603717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969603714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72db36bf23c41042933ed7e84a742ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1976888811
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,7 +3004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.1, y: -7.4}
+  m_AnchoredPosition: {x: 24.5, y: -6.7}
   m_SizeDelta: {x: 150.4, y: 42.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976888813
@@ -3079,6 +3199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075834844}
   - component: {fileID: 2075834845}
+  - component: {fileID: 2075834846}
   m_Layer: 5
   m_Name: Red
   m_TagString: Untagged
@@ -3093,18 +3214,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075834843}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -22.786331}
+  m_LocalScale: {x: 5, y: 5, z: 0}
   m_Children:
   - {fileID: 1951521255}
   - {fileID: 1295451468}
-  m_Father: {fileID: 167123009}
-  m_RootOrder: 1
+  m_Father: {fileID: 461693319}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.1, y: 14.5}
+  m_AnchoredPosition: {x: 8.317602, y: 16.112854}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2075834845
@@ -3149,7 +3270,30 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2075834846}
+        m_MethodName: toggleRed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
+--- !u!114 &2075834846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075834843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72db36bf23c41042933ed7e84a742ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

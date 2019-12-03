@@ -8,8 +8,6 @@ using System.IO;
 public class SkinStore : MonoBehaviour
 {
 
-    //Struc
-
     public static string path = @"C:\amirza28\";
     public static string balance = "balance.txt";
 
